@@ -1,16 +1,16 @@
-var MSCGEN_BROWSER_OBJECT		= 'Browser[label="Browser", textbgcolour="#ccf", textcolor="#909", linecolor="#ccf"]';
+var MSCGEN_BROWSER_OBJECT	= 'Browser[label="Browser", textbgcolour="#ccf", textcolor="#909", linecolor="#ccf"]';
 var REQUEST_SENT_FROM_BROWSER	= 'Browser => {0} [label = "{1} {2}({3})"]'
 var RESPONSE_SENT_TO_BROWSER	= 'Browser << {0} [label = " Response Code: {1}"]'
 var DOMAIN_OBJECT_FOR_MSCGEN	= '{0}[label="{1}", textcolor="white", textbgcolor="orange", linecolor="orange"]'
-var TMMessage					= '{ "src": "{0}", "dst": "{1}", "transport": "REST", "function": "{2}", "params": "{3}", "comment": "" }';
+var TMMessage			= '{ "src": "{0}", "dst": "{1}", "transport": "REST", "function": "{2}", "params": "{3}", "comment": "" }';
 
-var domainBlackList 			= ["r7---sn-oxu8pnpvo-ua8z.googlevideo.com","googleads.g.doubleclick.net","manlomhmablkfdjpckmbgabaedodipho","rs.fullstory.com","d2x3xhvgiqkx42.cloudfront.net","static.parastorage.com","frog.wix.com","calendar-pa.clients6.google.com","fonts.googleapis.com","13.client-channel.google.com","3.client-channel.google.com","plus.google.com","ci6.googleusercontent.com","accounts.google.com","ogs.google.com","11.client-channel.google.com","clients2.google.com","contacts.google.com","lh3.googleusercontent.com","notifications.google.com","clients6.google.com","people-pa.clients6.google.com","ci3.googleusercontent.com","ci5.googleusercontent.com","www.gstatic.com","mail.google.com","play.google.com","apis.google.com","hangouts.google.com","csi.gstatic.com","jira.wixpress.com","calendar.google.com","ssl.gstatic.com","2.client-channel.google.com","www.youtube.com","www.google-analytics.com","www.google.co.il","www.google.com","fonts.gstatic.com"];
-var requests 					= [];
-var responses 					= [];
-var allowedDomains				= [];
-var MscGenMessages 				= [];
-var MscGenDomains 				= [MSCGEN_BROWSER_OBJECT];
-var TMMessages					= [];
+var domainBlackList 		= ["r7---sn-oxu8pnpvo-ua8z.googlevideo.com","googleads.g.doubleclick.net","manlomhmablkfdjpckmbgabaedodipho","rs.fullstory.com","d2x3xhvgiqkx42.cloudfront.net","static.parastorage.com","frog.wix.com","calendar-pa.clients6.google.com","fonts.googleapis.com","13.client-channel.google.com","3.client-channel.google.com","plus.google.com","ci6.googleusercontent.com","accounts.google.com","ogs.google.com","11.client-channel.google.com","clients2.google.com","contacts.google.com","lh3.googleusercontent.com","notifications.google.com","clients6.google.com","people-pa.clients6.google.com","ci3.googleusercontent.com","ci5.googleusercontent.com","www.gstatic.com","mail.google.com","play.google.com","apis.google.com","hangouts.google.com","csi.gstatic.com","jira.wixpress.com","calendar.google.com","ssl.gstatic.com","2.client-channel.google.com","www.youtube.com","www.google-analytics.com","www.google.co.il","www.google.com","fonts.gstatic.com"];
+var requests 			= [];
+var responses 			= [];
+var allowedDomains		= [];
+var MscGenMessages 		= [];
+var MscGenDomains 		= [MSCGEN_BROWSER_OBJECT];
+var TMMessages			= [];
 
 
 
@@ -128,8 +128,6 @@ function getMSCGenJson(){
 			msgesArray += elem + ';'
 		})
 	
-
-	
 	return("msc{ hscale=\"2.8\"; " + objectsArray + " " + msgesArray + " } ");
 }
 
@@ -222,12 +220,12 @@ String.prototype.format = function() {
            
            //clean flow button pressed
            if (msg.id == 1) { 
-				requests 			= [];
-				responses 			= [];
+				requests 		= [];
+				responses 		= [];
 				allowedDomains		= [];
 				MscGenMessages 		= [];
 				MscGenDomains 		= [MSCGEN_BROWSER_OBJECT];
-				TMMessages			= [];
+				TMMessages		= [];
 
 	           	port.postMessage("Done");
            }
