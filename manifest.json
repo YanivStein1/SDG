@@ -1,0 +1,17 @@
+{
+  "name": "sequence diagram generator",
+  "version": "1.0",
+  "description": "sequence diagram generator",
+  "manifest_version": 2,
+  "permissions": [
+    "<all_urls>","webRequest","webRequestBlocking"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    }
+}
